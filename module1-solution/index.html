@@ -3,23 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>Lunch Checker</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
 
-    <link rel="stylesheet" href="/style/bootstrap.min.css" media="screen" title="no title">
     <style media="screen">
-      .message {
+      body {
                 font-size: 1.3em;
                 font-weight: bold;
-                }
+            }
+      .green {
+                color : green;
+            }
     </style>
   </head>
-  <body>
-        <div class="container">
+
+  <body ng-app="LunchApp">
+        <div class="container" ng-controller="LunchCheckController">
             <h1>Lunch Checker</h1>
 
               <div class="form-group">
-                <input id="lunch-menu" type="text" 
+                <input id="lunch-menu" type="text" ng-model="inputText">
+                <p/>
+                <br>
+                <button ng-click='sayHello()'>Check If Too Much</button>
+                <br>
+                <br>
+                {{message}}
               </div>
-
         </div>
   </body>
+
 </html>
